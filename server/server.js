@@ -61,9 +61,9 @@ ConnectSocket(server);
 
 app.use(cors());
 
-// app.use(express.static(path.resolve(__dirname, "../admin/dist")));
+app.use(express.static(path.resolve(__dirname, "../admin/dist")));
 
-app.use(express.static(path.resolve(__dirname, "../client/dist")));
+// app.use(express.static(path.resolve(__dirname, "../client/dist")));
 
 app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
@@ -78,13 +78,13 @@ app.use("/api/review", reviewRoute);
 app.use("/api/promotion", promotionRoute);
 app.use("/api/chat", chatRoute);
 
-// app.get("/*", (req, res) => {
-//   res.sendFile(path.resolve(__dirname, "../admin/dist", "index.html"));
-// });
-
 app.get("/*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../client/dist", "index.html"));
+  res.sendFile(path.resolve(__dirname, "../admin/dist", "index.html"));
 });
+
+// app.get("/*", (req, res) => {
+//   res.sendFile(path.resolve(__dirname, "../client/dist", "index.html"));
+// });
 
 // Not Found Middleware
 app.use("*", (req, res) => {

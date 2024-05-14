@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "setup-project": "npm i && cd client && npm i",
-    "setup-production-app": "npm i && cd ../client && npm i && npm run build",
+    "setup-project": "npm i && cd admin && npm i",
+    "setup-production-app": "npm i && cd ../admin && npm i && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js"
   },
